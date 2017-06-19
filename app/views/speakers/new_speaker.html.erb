@@ -1,0 +1,13 @@
+<h1> New Speaker from </h1>
+
+<%= form_for @speaker, url: create_new_speaker_path do |f| %>
+  
+  
+   <p>
+       <div class="label"><%= f.label 'name:' %></div>
+        <div class="field"><%= f.text_field 'name' %></div>
+
+   </p>
+   <p>   
+          <%= f.submit 'create' %>
+<%end%>

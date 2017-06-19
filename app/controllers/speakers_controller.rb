@@ -2,7 +2,8 @@ class SpeakersController < ApplicationController
 	before_action :verify_admin
 
 	def index
-		@speakers = Speaker.all
+		#@speakers = Speaker.all
+		@speakers=Speaker.all.collect(&:name).uniq.map{|x| Speaker.find_by_name(x)}
 	end
 
 	def show
@@ -10,23 +11,15 @@ class SpeakersController < ApplicationController
 	end
 
 	def create
-		@event = Speaker.new(speaker_params)
+		@speaker = Speaker.new(speaker_params)
+		@event=Event.find_by_id(session[:event_id])
+		@event.speakers << @speaker
 		if @event.save
 			redirect_to speakers_path, notice: 'speaker was successfully created.' 
 		end
 	end
 
-	def register_for_event
-		if session[:user_id] && params[:event_id]
-			event = Speaker.find_by_id(params[:event_id])
-			if event
-				event.users << Speaker.find_by_id(session[:user_id])
-				event.save
-			end
-	    end
-    	redirect_to root_path
-	end
-
+		
 	def new
 		@speaker = Speaker.new
 	end	
@@ -42,16 +35,28 @@ class SpeakersController < ApplicationController
 		end				
 	end
 
+    def new_speaker
+       @speaker=Speaker.new
+    end
+
+    def create_new_speaker
+        @speaker=Speaker.new(speaker_params)
+       if @speaker.save
+       	 redirect_to speakers_path, notice: 'speaker was successfully created.' 
+       	end
+    end
+
+
 	def destroy
          @speaker = Speaker.find_by_id(params[:id]) 
          if @speaker.destroy
          redirect_to speakers_path, notice: 'Speakers was successfully deleted.' 
         else
         	redirect_to speakers_path,notice: 'unable to delete the speaker'
-	end
-end
+	    end
+    end
 
-private
+ private
 	def speaker_params
 		params.require(:speaker).permit(:name)
     end

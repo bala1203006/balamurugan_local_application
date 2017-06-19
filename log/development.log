@@ -11245,3 +11245,2108 @@ Processing by LoginController#login as HTML
 Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:18:18 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (37.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (273.8ms)
+Completed 200 OK in 309ms (Views: 293.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/login" for 127.0.0.1 at 2017-06-19 11:18:29 +0530
+Processing by LoginController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bl2/+27gIwb/u+dvEPW4ZN4Jtz1Ql+wfy7e0tV003eqnw6UGw9X15Y+x4p44SxwyF2yZMc7Y04Y+QCjwAMk0HA==", "email"=>"bala@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (29.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2[0m  [["email", "bala@gmail.com"], ["password", "balamurugan"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 191ms (ActiveRecord: 120.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:18:30 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (41.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (82.3ms)
+Completed 200 OK in 121ms (Views: 51.6ms | ActiveRecord: 48.4ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:18:36 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  Rendered speakers/new.html.erb within layouts/application (90.5ms)
+Completed 200 OK in 141ms (Views: 108.9ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mSpeaker Load (37.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:22:39 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:22:42 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (66.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (27.9ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (156.0ms)
+Completed 200 OK in 204ms (Views: 87.1ms | ActiveRecord: 96.2ms)
+
+
+Started GET "/events/" for 127.0.0.1 at 2017-06-19 11:23:38 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:23:42 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 46ms (Views: 39.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:23:45 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:23:56 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:25:02 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:25:10 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:28:12 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (1.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 35ms (Views: 28.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:28:13 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (2.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 38ms (Views: 34.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-06-19 11:28:20 +0530
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 61ms (Views: 56.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:28:37 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:28:40 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  Rendered speakers/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:30:20 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered speakers/new.html.erb within layouts/application (41.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Speaker:0xb3a25e3c>):
+     7:        <div class="label"><%= f.label 'name:' %></div>
+     8:        <%categories = Event.all.collect(&:type).compact.uniq%>
+     9:        
+    10:         <div class="filed"><%= f.select  :type, options_for_select(categories.collect{ |u| [u] })%></div>
+    11:    </p>
+    12:    <p>   
+    13:   
+  
+app/views/speakers/new.html.erb:10:in `block in _app_views_speakers_new_html_erb__228926567__640628578'
+app/views/speakers/new.html.erb:3:in `_app_views_speakers_new_html_erb__228926567__640628578'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.1ms)
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:31:01 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `type' for #<Speaker:0xa2cf204>):
+     5:   
+     6:    <p>
+     7:        <div class="label"><%= f.label 'name:' %></div>
+     8:        <%speakers = Speaker.all.collect(&:type).compact.uniq%>
+     9:        
+    10:         <div class="filed"><%= f.select  :type, options_for_select(speakers.collect{ |u| [u] })%></div>
+    11:    </p>
+  
+app/views/speakers/new.html.erb:8:in `block in _app_views_speakers_new_html_erb__228926567_89639490'
+app/views/speakers/new.html.erb:3:in `_app_views_speakers_new_html_erb__228926567_89639490'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.4ms)
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:31:20 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:36:25 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:36:28 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 37ms (Views: 31.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:36:47 +0530
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:36:47 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 11:36:50 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:36:50 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (26.3ms)
+Completed 200 OK in 37ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 11:36:50 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:36:50 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (26.5ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/login" for 127.0.0.1 at 2017-06-19 11:36:57 +0530
+Processing by LoginController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mbtKE8RSRmH5V/T3bK5cogNCupHK067w1fQMGYSAwLohYSXybIgYVbW66jz6T4CESsYTG2/T3hrkYJJFGbF7Nw==", "email"=>"manik@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2[0m  [["email", "manik@gmail.com"], ["password", "manik"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:36:57 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date > '2017-06-19 06:06:57.233468')[0m
+  Rendered events/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 25.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/register_for_event" for 127.0.0.1 at 2017-06-19 11:37:15 +0530
+Processing by EventsController#register_for_event as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:37:15 +0530
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:37:15 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date > '2017-06-19 06:07:15.330150')[0m
+  Rendered events/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2017-06-19 11:38:17 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 5]]
+  Rendered events/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 47ms (Views: 37.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/events/register_for_event" for 127.0.0.1 at 2017-06-19 11:38:24 +0530
+Processing by EventsController#register_for_event as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:38:24 +0530
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:38:24 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date > '2017-06-19 06:08:24.746545')[0m
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2017-06-19 11:38:27 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 5]]
+  Rendered events/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 43ms (Views: 36.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/events/register_for_event" for 127.0.0.1 at 2017-06-19 11:38:31 +0530
+Processing by EventsController#register_for_event as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:38:31 +0530
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:38:31 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE (start_date > '2017-06-19 06:08:31.090896')[0m
+  Rendered events/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 11:38:34 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (23.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 67ms (Views: 36.2ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/events/5" for 127.0.0.1 at 2017-06-19 11:39:33 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 5]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 5]]
+  Rendered events/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 11:39:36 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:39:36 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (30.2ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 11:39:37 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:39:37 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (29.8ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/login" for 127.0.0.1 at 2017-06-19 11:39:49 +0530
+Processing by LoginController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5aqu5oSC5DOtXr/wVxOYq+2nqygPumvEedsg2YWmNZfi3vWyJPBcI1H+tYWNOHHACzeVuOxZCHzO89KY4AY1MA==", "email"=>"bala@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2[0m  [["email", "bala@gmail.com"], ["password", "balamurugan"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:39:49 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:40:07 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:43:57 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 77ms (Views: 49.2ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 11:43:59 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:43:59 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (32.9ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 11:43:59 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 11:43:59 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (35.7ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/login" for 127.0.0.1 at 2017-06-19 11:44:13 +0530
+Processing by LoginController#check as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8R5kuvp0DDy8rMsvfTQI4clLKydh88skn4mOtqfma00zmLdHxIcDnf3gjOF7GS6xbRyK3XcI0NZooGKTBwQwYA==", "email"=>"bala@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 AND "users"."password" = $2[0m  [["email", "bala@gmail.com"], ["password", "balamurugan"]]
+Redirected to http://localhost:3000/events
+Completed 302 Found in 39ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:44:14 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:44:19 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 63ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:44:58 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:45:00 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:45:02 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 11:45:05 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2d4srOoaCGh+kSYEzZIxAzQTlwBM0v7e5cAHNETmxSNFxdW8I9JGgQGVGBYyRA7joZPFKKW4SGQ0vVERgFXi/A==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.8ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:15:05 UTC], ["updated_at", 2017-06-19 06:15:05 UTC]]
+  [1m[35mSQL (13.1ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 6], ["speaker_id", 4]]
+  [1m[35m (22.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 98ms (ActiveRecord: 60.4ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:45:05 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:45:14 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 44ms (Views: 42.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 11:45:15 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 40ms (Views: 34.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:45:24 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:45:36 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 41ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:45:39 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 32.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:50:45 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 65ms (Views: 42.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:50:46 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1> New Speaker from </h1>
+    2: 
+    3: <%= form_for @speaker, url: speakers_path do |f| %>
+    4:   
+    5:   
+    6:    <p>
+  
+app/views/speakers/new_speaker.html.erb:3:in `_app_views_speakers_new_speaker_html_erb__405854347__644631358'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.4ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.0ms)
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:51:11 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 20.4ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:51:27 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (108.7ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `label_field' for #<ActionView::Helpers::FormBuilder:0xb32f5824>):
+    4:   
+    5:   
+    6:    <p>
+    7:        <div class="label"><%= f.label_field 'name:' %></div>
+    8: 
+    9:    </p>
+   10:    <p>   
+  
+app/views/speakers/new_speaker.html.erb:7:in `block in _app_views_speakers_new_speaker_html_erb__405854347__646435538'
+app/views/speakers/new_speaker.html.erb:3:in `_app_views_speakers_new_speaker_html_erb__405854347__646435538'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.5ms)
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:51:55 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name:' for #<Speaker:0xb2c21174>
+Did you mean?  name
+               name?
+               name=):
+     5:   
+     6:    <p>
+     7:        <div class="label"><%= f.label 'name:' %></div>
+     8:         <div class="field"><%= f.text_field 'name:' %></div>
+     9: 
+    10:    </p>
+    11:    <p>   
+  
+app/views/speakers/new_speaker.html.erb:8:in `block in _app_views_speakers_new_speaker_html_erb__405854347__647954088'
+app/views/speakers/new_speaker.html.erb:3:in `_app_views_speakers_new_speaker_html_erb__405854347__647954088'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.4ms)
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:52:15 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:55:57 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (229.6ms)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_new_speaker' for #<#<Class:0xb2b82bb4>:0xb2b820ec>
+Did you mean?  create_new_speaker_url
+               create_new_speaker_path):
+    1: <h1> New Speaker from </h1>
+    2: 
+    3: <%= form_for @speaker, url: create_new_speaker do |f| %>
+    4:   
+    5:   
+    6:    <p>
+  
+app/views/speakers/new_speaker.html.erb:3:in `_app_views_speakers_new_speaker_html_erb__405854347__648275898'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.3ms)
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:56:07 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/speaker/create_new_speaker" for 127.0.0.1 at 2017-06-19 11:56:26 +0530
+Processing by SpeakersController#create_new_speaker as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+23A1z7vC/r0pzHb7U0rb5JHRDykYGpH6OgfSK5EhM+tFV3ysmO33J6Caddwkt+dAUYSQaKzK8LcU0L39sz2rg==", "speaker"=>{"name"=>"siva"}, "commit"=>"create"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "siva"], ["created_at", 2017-06-19 06:26:26 UTC], ["updated_at", 2017-06-19 06:26:26 UTC]]
+  [1m[35m (57.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 64ms (ActiveRecord: 58.6ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:56:26 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/speakers/4" for 127.0.0.1 at 2017-06-19 11:56:34 +0530
+Processing by SpeakersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MFeMZBh6vmTola86YdCBdCFpaOr6PvLItChfoQZqerFmLxFBlPYCQoKw9zb8D3WGsmg+l/zts02AkwIeXuII0A==", "id"=>"4"}
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 4]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 4]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 53ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:56:34 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:56:36 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 49ms (Views: 46.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 11:56:39 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 80ms (Views: 67.8ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/events/8" for 127.0.0.1 at 2017-06-19 11:56:45 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 8]]
+  Rendered events/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:56:46 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:57:05 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 33ms (Views: 29.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 11:57:08 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wcqvuoq34MzyMSAs0Dwmb/0tBiWDcTXmj+ZfbKszKv7F0VaqQ3+uJY01Hj4v6hmPaK1UDWobg1xemwlJb4ANIQ==", "speaker"=>{"name"=>"siva"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "siva"], ["created_at", 2017-06-19 06:27:08 UTC], ["updated_at", 2017-06-19 06:27:08 UTC]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 8], ["speaker_id", 6]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 40ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:57:08 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:57:09 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 11:57:16 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 43ms (Views: 37.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:57:21 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:57:23 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 11:57:25 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t7T1SxEafHnV/yeJPZ2ILpsAsfBWtbvpkuR4M1mKSp4rrwxb2NIykKr7GZvCS7fODoDj2L/fDVNDmS4WnTltQQ==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:27:25 UTC], ["updated_at", 2017-06-19 06:27:25 UTC]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["speaker_id", 7]]
+  [1m[35m (21.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 37ms (ActiveRecord: 25.6ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:57:25 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:57:26 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 11:57:28 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:57:40 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:58:21 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:58:24 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 11:58:25 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/P1dF/3m5gQFptf5qPeyPd5UyZz2x3geR0xloyKlnTZg5qQHNC6o7Xqi6etXIY3dS9SbtB+tzqSWMTOG5ha66Q==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:28:25 UTC], ["updated_at", 2017-06-19 06:28:25 UTC]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["speaker_id", 8]]
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 40ms (ActiveRecord: 24.7ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:58:25 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:58:29 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/8" for 127.0.0.1 at 2017-06-19 11:58:30 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 8]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 8]]
+  Rendered events/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 47ms (Views: 39.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 11:58:40 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-06-19 11:58:43 +0530
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 11:58:46 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/speaker/create_new_speaker" for 127.0.0.1 at 2017-06-19 11:58:51 +0530
+Processing by SpeakersController#create_new_speaker as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HU4OfeAG86RpPNou0rSTqIuMTTakQCkhz4m3J45zBW2Z7oau990nc/2OEFOzS+N/RjmaA1yhcOw1JfuiNHR6lg==", "speaker"=>{"name"=>"sathish"}, "commit"=>"create"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sathish"], ["created_at", 2017-06-19 06:28:51 UTC], ["updated_at", 2017-06-19 06:28:51 UTC]]
+  [1m[35m (75.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 82ms (ActiveRecord: 76.6ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:58:51 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/speakers/3" for 127.0.0.1 at 2017-06-19 11:59:11 +0530
+Processing by SpeakersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VxQViiwwiBbMdNqrwDe4GTD5xlkkau3xk9b57qVd+EEBbIivoLw0MKZRgqdd6Ezro/iQJCK5rHSnbaRR/dWKIA==", "id"=>"3"}
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 3]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 3]]
+  [1m[35m (24.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 34ms (ActiveRecord: 26.3ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:59:11 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/speakers/7" for 127.0.0.1 at 2017-06-19 11:59:13 +0530
+Processing by SpeakersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Cl8UMko+aoASUMi3VGxAX/7r4tRk3wdOADxW77AqFjlcJ4kXxrLWpnh1kLvJs7Stbeq0qWIMRss0hwtQ6KJkWA==", "id"=>"7"}
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 7]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 7]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 22ms (ActiveRecord: 13.7ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:59:13 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/speakers/6" for 127.0.0.1 at 2017-06-19 11:59:19 +0530
+Processing by SpeakersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"82hVy5AEreCh1PwdULWCkNLUT6EClJagrznkbT4qfDWlEMjuHIgRxsvxpBHNanZiQdUZ3ARH1yWbgrnSZqIOVA==", "id"=>"6"}
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 6]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 6]]
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 31ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:59:19 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 11:59:44 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 11:59:47 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BP/kH7yt4jVRun4SjsQGqFJ2Lb1OTiLgwybZ8Q3Yv6eY5B0PdWWs3C6+QABxEjlIx/Z/lacklFoSW4/UyWuYeA==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:29:47 UTC], ["updated_at", 2017-06-19 06:29:47 UTC]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 8], ["speaker_id", 10]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 42ms (ActiveRecord: 29.2ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 11:59:47 +0530
+Processing by SpeakersController#index as HTML
+  Rendering speakers/index.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."name" = $1 LIMIT $2[0m  [["name", "Hari Sankasr"], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."name" = $1 LIMIT $2[0m  [["name", "Hari Sankasr"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:08:01 +0530
+Processing by SpeakersController#index as HTML
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `eaker' for #<SpeakersController:0xb2c123cc>):
+  
+app/controllers/speakers_controller.rb:6:in `index'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.1ms)
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:08:19 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 51ms (Views: 27.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 12:08:27 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:08:29 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j74Hej3OIEh8sQU4tBkhkiQyz4zu1xvrsAcJ8yiTEJETpf5q9AZuoQO1OypLzx5ysbKdpAe9rVFhel/W7CA3Tg==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:38:29 UTC], ["updated_at", 2017-06-19 06:38:29 UTC]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 8], ["speaker_id", 11]]
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 111ms (ActiveRecord: 44.1ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:08:29 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.2ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 24.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:08:33 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/speaker/new" for 127.0.0.1 at 2017-06-19 12:08:35 +0530
+Processing by SpeakersController#new_speaker as HTML
+  Rendering speakers/new_speaker.html.erb within layouts/application
+  Rendered speakers/new_speaker.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/speaker/create_new_speaker" for 127.0.0.1 at 2017-06-19 12:08:40 +0530
+Processing by SpeakersController#create_new_speaker as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"358i0/FqpN/LkhVdbENjUabAiekk1Rp3p4qW60KMIDZbP6oA5rFwCF8g3yANvBOGa3Ve3Nw0Q7pdJtpu+ItfzQ==", "speaker"=>{"name"=>"dheva"}, "commit"=>"create"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dheva"], ["created_at", 2017-06-19 06:38:40 UTC], ["updated_at", 2017-06-19 06:38:40 UTC]]
+  [1m[35m (50.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 58ms (ActiveRecord: 51.0ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:08:40 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 23.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 12:08:42 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 44ms (Views: 38.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:08:45 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xgga9eEfRGGlC/OtvGfxal030wVD71sQ0w37oV96xezCE+PlKNcKiNoPzb9Dsc6KyLeBLaqF7aoCcK2Em8niMw==", "speaker"=>{"name"=>"dheva"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dheva"], ["created_at", 2017-06-19 06:38:45 UTC], ["updated_at", 2017-06-19 06:38:45 UTC]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 8], ["speaker_id", 13]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 24ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:08:45 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 22.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:08:47 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:08:50 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 74ms (Views: 65.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:08:56 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.2ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 28.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 12:08:59 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:09:02 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z+LHPa+aVSqziMR2uappLwQsh1RFFtlsaIX02vhX8Ub7+T4tZlIbw8yM+mRGfFbPkazVfKx8b9a5+KL/POTWmQ==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:39:02 UTC], ["updated_at", 2017-06-19 06:39:02 UTC]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["speaker_id", 14]]
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 47ms (ActiveRecord: 29.9ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:09:03 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 33ms (Views: 24.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 12:09:05 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:09:08 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iJ09xvH7pwSG1lIeLTsA5GoIgQB4oaL4tSTthHwk0p0UhsTWODPp7fnSbAzS7T8E/4jTKJHLFEJkWbuhuJf1Qg==", "speaker"=>{"name"=>"sathish"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sathish"], ["created_at", 2017-06-19 06:39:08 UTC], ["updated_at", 2017-06-19 06:39:08 UTC]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["speaker_id", 15]]
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 32ms (ActiveRecord: 21.6ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:09:08 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 31ms (Views: 24.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 12:09:09 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:09:12 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CFVvReF2bGOoICqxfREidJGyuKsB92DR9J/8yOPyUdSUTpZVKL4iitckFKOCxx2UBDLqg+id1msl4qrtJ0F2Cw==", "speaker"=>{"name"=>"dheva"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dheva"], ["created_at", 2017-06-19 06:39:12 UTC], ["updated_at", 2017-06-19 06:39:12 UTC]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["speaker_id", 16]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 33ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:09:12 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.2ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:09:13 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:09:15 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:10:28 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 32ms (Views: 27.5ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 8]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 8]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 8]]
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 10]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 10]]
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 11]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 11]]
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 16]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 16]]
+  [1m[35m (21.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "events_speakers" WHERE "events_speakers"."speaker_id" = $1[0m  [["speaker_id", 12]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "speakers" WHERE "speakers"."id" = $1[0m  [["id", 12]]
+  [1m[35m (18.0ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:17:11 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 132ms (Views: 73.4ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:17:16 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 28.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/speakers/new" for 127.0.0.1 at 2017-06-19 12:17:20 +0530
+Processing by SpeakersController#new as HTML
+  Rendering speakers/new.html.erb within layouts/application
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  Rendered speakers/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:17:23 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVFgc24ZTvU0TraZPzZ11c+rLWy8062yiAeKwJoPV9dZSpljp9EAHEtKiIvA4Eo1Wit/RFW5GwhZetzlXrxwCA==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSpeaker Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 29ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Name has already been taken):
+  
+app/controllers/speakers_controller.rb:16:in `create'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.1ms)
+Started POST "/speakers" for 127.0.0.1 at 2017-06-19 12:18:39 +0530
+Processing by SpeakersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xVFgc24ZTvU0TraZPzZ11c+rLWy8062yiAeKwJoPV9dZSpljp9EAHEtKiIvA4Eo1Wit/RFW5GwhZetzlXrxwCA==", "speaker"=>{"name"=>"manik chand vikram mudliyar"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "speakers" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "manik chand vikram mudliyar"], ["created_at", 2017-06-19 06:48:39 UTC], ["updated_at", 2017-06-19 06:48:39 UTC]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "events_speakers" ("event_id", "speaker_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["speaker_id", 17]]
+  [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/speakers
+Completed 302 Found in 126ms (ActiveRecord: 47.2ms)
+
+
+Started GET "/speakers" for 127.0.0.1 at 2017-06-19 12:18:39 +0530
+Processing by SpeakersController#index as HTML
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers"[0m
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "siva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "dheva"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.2ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  Rendering speakers/index.html.erb within layouts/application
+  Rendered speakers/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:18:47 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:18:49 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 72ms (Views: 60.9ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:22:29 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/kuttysaathan/balamurugan_local_application/app/views/events/show.html.erb:15: syntax error, unexpected '}', expecting ')'
+event.speakers.find_by_name(x} 
+                              ^
+/home/kuttysaathan/balamurugan_local_application/app/views/events/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting '}'
+          ensure
+                ^):
+  
+app/views/events/show.html.erb:15: syntax error, unexpected '}', expecting ')'
+app/views/events/show.html.erb:28: syntax error, unexpected keyword_ensure, expecting '}'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:23:04 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.2ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (25.3ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 5.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for "manik chand vikram mudliyar":String):
+    15: <% event_speaker = @event.speakers.collect(&:name).uniq { |x| @event.speakers.find_by_name(x)} %>
+    16: <% if !event_speaker.blank? %>
+    17: <% event_speaker.each_with_index do |user,index| %>
+    18: 	<p><%= user.name %></p>
+    19: <% end %>
+    20: 
+    21: <%end%>
+  
+app/views/events/show.html.erb:18:in `block in _app_views_events_show_html_erb___760791825__662321678'
+app/views/events/show.html.erb:17:in `each'
+app/views/events/show.html.erb:17:in `each_with_index'
+app/views/events/show.html.erb:17:in `_app_views_events_show_html_erb___760791825__662321678'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.8ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."name" = $1 LIMIT $2[0m  [["name", "Hari Sankasr"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.3ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1 AND "speakers"."name" = $2 LIMIT $3[0m  [["event_id", 1], ["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (1.0ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.6ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.9ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:31:55 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.1ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 42ms (Views: 34.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:46:42 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 72ms (Views: 46.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 12:46:51 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.3ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 74ms (Views: 62.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/events/6" for 127.0.0.1 at 2017-06-19 12:48:56 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSpeaker Load (0.8ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 6]]
+  [1m[36mSponsor Load (32.2ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors" INNER JOIN "events_sponsors" ON "sponsors"."id" = "events_sponsors"."sponsor_id" WHERE "events_sponsors"."event_id" = $1[0m  [["event_id", 6]]
+  Rendered events/show.html.erb within layouts/application (70.5ms)
+Completed 200 OK in 101ms (Views: 56.8ms | ActiveRecord: 41.1ms)
+
+
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:48:59 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (0.8ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+Completed 406 Not Acceptable in 26ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::UnknownFormat (SponsorsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.2) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.2) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.2) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.2) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.2) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.2) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.2) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.2) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.2) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.2) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.2) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.2) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.2) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:49:53 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (0.7ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendering sponsors/index.html.erb within layouts/application
+  Rendered sponsors/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:49:56 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sponsor/new" for 127.0.0.1 at 2017-06-19 12:49:58 +0530
+Processing by SponsorsController#new_sponsor as HTML
+  Rendering sponsors/new_sponsor.html.erb within layouts/application
+  Rendered sponsors/new_sponsor.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 44ms (Views: 30.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sponsor/create_new_sponsor" for 127.0.0.1 at 2017-06-19 12:50:06 +0530
+Processing by SponsorsController#create_new_sponsor as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XUI/GtcKe1Vs9LjqLavJzDsme+qJM1AM6UK5Vig7l1BoeFPBO1HcUJGAsQTK02+yV9oN7hqcuwX7tcIL64Dt3g==", "sponsor"=>{"name"=>"hr"}, "commit"=>"create"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ponsor):
+  
+app/controllers/sponsors_controller.rb:61:in `sponsor_params'
+app/controllers/sponsors_controller.rb:43:in `create_new_sponsor'
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/kuttysaathan/.rvm/gems/ruby-2.4.0@event-app/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+Started POST "/sponsor/create_new_sponsor" for 127.0.0.1 at 2017-06-19 12:50:41 +0530
+Processing by SponsorsController#create_new_sponsor as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XUI/GtcKe1Vs9LjqLavJzDsme+qJM1AM6UK5Vig7l1BoeFPBO1HcUJGAsQTK02+yV9oN7hqcuwX7tcIL64Dt3g==", "sponsor"=>{"name"=>"hr"}, "commit"=>"create"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.1ms)[0m  [1m[32mINSERT INTO "sponsors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "hr"], ["created_at", 2017-06-19 07:20:41 UTC], ["updated_at", 2017-06-19 07:20:41 UTC]]
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sponsors
+Completed 302 Found in 64ms (ActiveRecord: 37.4ms)
+
+
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:50:42 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (1.0ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  [1m[36mSponsor Load (0.7ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."name" = $1 LIMIT $2[0m  [["name", "hr"], ["LIMIT", 1]]
+  Rendering sponsors/index.html.erb within layouts/application
+  Rendered sponsors/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 24.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/sponsors/1" for 127.0.0.1 at 2017-06-19 12:50:45 +0530
+Processing by SponsorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSponsor Load (0.6ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sponsors/show.html.erb within layouts/application
+  Rendered sponsors/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:50:56 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (0.4ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  [1m[36mSponsor Load (0.4ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."name" = $1 LIMIT $2[0m  [["name", "hr"], ["LIMIT", 1]]
+  Rendering sponsors/index.html.erb within layouts/application
+  Rendered sponsors/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sponsors/1/edit" for 127.0.0.1 at 2017-06-19 12:50:57 +0530
+Processing by SponsorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSponsor Load (0.4ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sponsors/edit.html.erb within layouts/application
+  Rendered sponsors/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/sponsors/1" for 127.0.0.1 at 2017-06-19 12:51:04 +0530
+Processing by SponsorsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+f9vSUtaCr1HjkAvAijXgKXagsEC6cVvEBibIzJ9aZAzmQBSb6aEOgd7bJ2Dkza9UrIbXunT2bVpb/g7O5QsYg==", "sponsor"=>{"name"=>"hrr"}, "commit"=>"create", "id"=>"1"}
+  [1m[36mSponsor Load (0.6ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "sponsors" SET "name" = $1, "updated_at" = $2 WHERE "sponsors"."id" = $3[0m  [["name", "hrr"], ["updated_at", 2017-06-19 07:21:04 UTC], ["id", 1]]
+  [1m[35m (55.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sponsors
+Completed 302 Found in 62ms (ActiveRecord: 56.5ms)
+
+
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:51:04 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (0.6ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  [1m[36mSponsor Load (0.8ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."name" = $1 LIMIT $2[0m  [["name", "hrr"], ["LIMIT", 1]]
+  Rendering sponsors/index.html.erb within layouts/application
+  Rendered sponsors/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 22.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:51:09 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 104ms (Views: 60.8ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:51:11 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (1.3ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.5ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSponsor Load (1.3ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors" INNER JOIN "events_sponsors" ON "sponsors"."id" = "events_sponsors"."sponsor_id" WHERE "events_sponsors"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (89.8ms)
+Completed 200 OK in 119ms (Views: 99.2ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:51:15 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (1.5ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  [1m[36mSponsor Load (0.6ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."name" = $1 LIMIT $2[0m  [["name", "hrr"], ["LIMIT", 1]]
+  Rendering sponsors/index.html.erb within layouts/application
+  Rendered sponsors/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 38ms (Views: 29.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/sponsors/new" for 127.0.0.1 at 2017-06-19 12:51:20 +0530
+Processing by SponsorsController#new as HTML
+  Rendering sponsors/new.html.erb within layouts/application
+  [1m[36mSponsor Load (0.5ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  Rendered sponsors/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sponsors" for 127.0.0.1 at 2017-06-19 12:51:22 +0530
+Processing by SponsorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZgIaQN9ub5V8DxM+ppXqo8AgMieNIVRB7uP/4y8AYhlE10fLFAvmp3Khd207a2Uw77Bz1xRRYU8tH2r1EzMYkg==", "sponsor"=>{"name"=>"hrr"}, "commit"=>"create"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "sponsors" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "hrr"], ["created_at", 2017-06-19 07:21:22 UTC], ["updated_at", 2017-06-19 07:21:22 UTC]]
+  [1m[35mSQL (16.4ms)[0m  [1m[32mINSERT INTO "events_sponsors" ("event_id", "sponsor_id") VALUES ($1, $2) RETURNING "id"[0m  [["event_id", 1], ["sponsor_id", 2]]
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/sponsors
+Completed 302 Found in 60ms (ActiveRecord: 37.4ms)
+
+
+Started GET "/sponsors" for 127.0.0.1 at 2017-06-19 12:51:22 +0530
+Processing by SponsorsController#index as HTML
+  [1m[36mSponsor Load (0.7ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors"[0m
+  [1m[36mSponsor Load (0.5ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."name" = $1 LIMIT $2[0m  [["name", "hrr"], ["LIMIT", 1]]
+  Rendering sponsors/index.html.erb within layouts/application
+  Rendered sponsors/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 12:51:23 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-06-19 12:51:25 +0530
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "events_users" ON "users"."id" = "events_users"."user_id" WHERE "events_users"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT "speakers".* FROM "speakers" INNER JOIN "events_speakers" ON "speakers"."id" = "events_speakers"."speaker_id" WHERE "events_speakers"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "manik chand vikram mudliyar"], ["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" WHERE "speakers"."name" = $1 LIMIT $2[0m  [["name", "sathish"], ["LIMIT", 1]]
+  [1m[36mSponsor Load (0.8ms)[0m  [1m[34mSELECT "sponsors".* FROM "sponsors" INNER JOIN "events_sponsors" ON "sponsors"."id" = "events_sponsors"."sponsor_id" WHERE "events_sponsors"."event_id" = $1[0m  [["event_id", 1]]
+  [1m[36mSponsor Load (0.5ms)[0m  [1m[34mSELECT  "sponsors".* FROM "sponsors" WHERE "sponsors"."name" = $1 LIMIT $2[0m  [["name", "hrr"], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 46ms (Views: 39.4ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Started GET "/" for 127.0.0.1 at 2017-06-19 16:30:17 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (24.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 16:30:18 +0530
+Processing by EventsController#index as HTML
+Started GET "/" for 127.0.0.1 at 2017-06-19 16:30:18 +0530
+  Rendering events/index.html.erb within layouts/application
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 16:30:18 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (171.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mEvent Load (183.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (298.0ms)
+  Rendered events/index.html.erb within layouts/application (348.8ms)
+Completed 200 OK in 740ms (Views: 489.8ms | ActiveRecord: 249.0ms)
+
+
+Completed 200 OK in 835ms (Views: 541.7ms | ActiveRecord: 243.4ms)
+
+
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-06-19 18:00:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 18:00:10 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 265ms (Views: 252.6ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 18:00:45 +0530
+Processing by LoginController#login as HTML
+Redirected to http://localhost:3000/events
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-06-19 18:00:45 +0530
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 44ms (Views: 41.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 18:00:46 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 18:00:46 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (77.3ms)
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/sign_out" for 127.0.0.1 at 2017-06-19 18:00:46 +0530
+Processing by LoginController#sign_out as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-19 18:00:46 +0530
+Processing by LoginController#login as HTML
+  Rendering login/login.html.erb
+  Rendered login/login.html.erb (27.7ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (33.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSpeaker Load (43.4ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" ORDER BY "speakers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSpeaker Load (0.7ms)[0m  [1m[34mSELECT  "speakers".* FROM "speakers" ORDER BY "speakers"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]

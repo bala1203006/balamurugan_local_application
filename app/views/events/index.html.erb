@@ -10,6 +10,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  
 <% @events.each do |event| %>
 
   <tbody>
@@ -31,6 +32,7 @@
 </table>
 <% if session[:role] == "ADMIN" %>
 <p><%= link_to 'New Event', new_event_path %></p>
-<p><%= link_to 'New speaker', new_speaker_path %> </p>
+<p><%= link_to 'New speaker', new_new_speaker_path %> </p>
+<p><%= link_to 'New sponsor', new_new_sponsor_path %> </p>
 
 <% end %>

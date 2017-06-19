@@ -8,12 +8,14 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find_by_id(params[:id])
+		session[:event_id]=@event.id if session[:role] == "ADMIN"
 	end
 
 	def create
 		@event = Event.new(event_params.merge({:type => params[:type]}))
 		if @event.save
-			redirect_to root_path, notice: 'Event was successfully created.' 
+			flash[:notice] = "New user succefully created"
+			redirect_to root_path
 		end
 	end
 
@@ -43,7 +45,7 @@ class EventsController < ApplicationController
 		end				
 	end
 
-private
+  private
 	def event_params
 		unless params[:event].blank?
      		params.require(:event).permit(:name, :start_date, :end_date, :venue, :country, :city)

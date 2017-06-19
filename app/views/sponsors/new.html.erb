@@ -1,0 +1,14 @@
+<h1> New Sponsor from </h1>
+
+<%= form_for @sponsor, url: sponsors_path do |f| %>
+  
+  
+   <p>
+       <div class="label"><%= f.label 'name:' %></div>
+       <%sponsors = Sponsor.all.collect(&:name).compact.uniq%>
+       
+        <div class="filed"><%= f.select  :name, options_for_select(sponsors.collect{ |u| [u] })%></div>
+   </p>
+   <p>   
+          <%= f.submit 'create' %>
+<%end%>

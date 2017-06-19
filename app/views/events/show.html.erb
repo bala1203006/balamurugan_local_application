@@ -1,26 +1,44 @@
 
 <h3>Event details</h3>
-<% event_users = @event.users %>
-<%= @event.name %>
-<%= @event.users.count %>
-<br>
+	<% event_users = @event.users %>
+	<%= @event.name %>
+	<%= @event.users.count %>
+	<br>
 
 <h4>User details</h4>
 
-<% event_users.each_with_index do |user,index| %>
-	<%= user.name %>
-<% end %>
+	<% event_users.each_with_index do |user,index| %>
+		<%= user.name %>
+	<% end %>
+
+<h5>spekers details</h5>
+	<% event_speaker = @event.speakers.collect{|x| x.name}.uniq.map {|a| Speaker.find_by_name(a)} %>
+	<% if !event_speaker.blank? %>
+	<% event_speaker.each_with_index do |user,index| %>
+		<p><%= user.name %></p>
+	<% end %>
+
+	<%end%>
+
+	<p>
+	<% if session[:role] == "ADMIN" %>
+	  <%= link_to 'click here to manage the speaker',speakers_path %>
+	<%end%>
+	</p>
+
+
 
 <h5>sponsor details</h5>
-<% event_speaker = @event.speakers %>
-<% if !event_speaker.blank? %>
-<% event_speaker.each_with_index do |user,index| %>
-	<%= user.name %>
-<% end %>
+	<% event_sponsor = @event.sponsors.collect{|x| x.name}.uniq.map {|a| Sponsor.find_by_name(a)} %>
+	<% if !event_sponsor.blank? %>
+	<% event_sponsor.each_with_index do |user,index| %>
+		<p><%= user.name %></p>
+	<% end %>
 
-<%end%>
+	<%end%>
 
-
-<% if session[:role] == "ADMIN" %>
-  <%= link_to 'click here to manage the speaker',speakers_path %>
-<%end%>
+	<p>
+	<% if session[:role] == "ADMIN" %>
+	  <%= link_to 'click here to manage the sponsor',sponsors_path %>
+	<%end%>
+</p>

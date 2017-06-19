@@ -1,10 +1,14 @@
-<h1> New Event from </h1>
+<h1> New Speaker from </h1>
 
 <%= form_for @speaker, url: speakers_path do |f| %>
-   <p>   
-   <div class="label"><%= f.label 'name:' %></div>
-      <div class="filed"><%= f.text_field :name %></div>
+  
+  
+   <p>
+       <div class="label"><%= f.label 'name:' %></div>
+       <%speakers = Speaker.all.collect(&:name).compact.uniq%>
+       
+        <div class="filed"><%= f.select  :name, options_for_select(speakers.collect{ |u| [u] })%></div>
    </p>
-   
-     <%= f.submit 'create' %>
+   <p>   
+          <%= f.submit 'create' %>
 <%end%>
