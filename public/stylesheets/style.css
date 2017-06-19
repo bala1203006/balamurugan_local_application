@@ -1,0 +1,71 @@
+
+/*.new_form {
+    float: left;
+    margin-bottom: 13px;
+    width: 100%;
+} */
+
+/*.field{margin-left: 10px;}*/
+
+/*.label {
+    float: left;
+    width: 10%;
+    color: white;
+}
+
+
+.filed {
+    float: left;margin-left: 16px;
+}*/
+/*#user_name,#user_password{border: 1px none;}*/
+
+
+
+/* styles for application.html.erb file 
+
+body {
+    background-color:#232323;
+    margin:0;
+    padding:0;
+}
+
+.wraper
+{
+    float:left;
+    width:100%;
+}
+.wraper-header
+{
+
+    width:100%;
+    float:left;
+}
+.row
+{
+
+    max-width:1240px;
+    width:98%;
+    padding:0px 10px;
+    margin:0px auto;
+    background-color:red;
+    float:center;
+}
+
+/* styles for login page 
+
+.parent_login{float: left;
+              width: 100%;
+             background-image: url(/images/blue-background.jpg);
+             background-repeat: no-repeat;
+             background-size:100%;
+             margin-top:120px;
+         border-radius: 76px;
+ }
+
+.parent_login_2{float: left;width: 64%;padding-left: 36%;padding-top: 124px;padding-bottom: 124px;}
+.child_login{float:left;width:100%;}
+
+.parent_login_header{float:left;width:100%;}
+
+.parent_login_header h1{color: white;}
+*/

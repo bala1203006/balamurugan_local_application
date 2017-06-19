@@ -1,0 +1,54 @@
+<%= form_for @user, url: users_path do |f| %>
+   <p>   
+   <div class="label"><%= f.label 'name:' %></div>
+      <div class="filed"><%= f.text_field :name %></div>
+   </p>
+   
+   <p>
+      <div class="label"><%= f.label 'phone_no:' %></div>
+      <div class="filed"><%= f.text_field :phone_no %></div>
+  </p>
+
+  <p>
+      <div class="label"><%= f.label 'password:' %></div>
+        <div class="filed"><%= f.text_field :password %></div>
+  </p>
+  
+  <p>
+      <div class="label"><%= f.label 'email:' %></div>
+        <div class="filed"><%= f.text_field :email %></div>
+  </p>
+
+   <p>
+      <div class="label"><%= f.label 'father_name:' %></div>
+        <div class="filed"><%= f.text_field :father_name %></div>
+   </p>
+   
+   <p>
+      <div class="label"><%= f.label 'mother_name:' %></div>
+        <div class="filed"><%= f.text_field :mother_name %></div>
+   </p>
+
+   <p>
+       <div class="label"><%= f.label 'profession:' %></div>
+        <div class="filed"><%= f.text_field :profession %></div>
+   </p>
+
+
+   <p>
+      <div class="label"><%= f.label 'city:' %></div>
+        <div class="filed"><%= f.text_field :city %></div>
+  </p>
+
+   <p>
+      <div class="label"><%= f.label 'state:' %></div>
+        <div class="filed"><%= f.text_field :state %></div>
+  </p>
+
+  <p>
+      <div class="label"><%= f.label 'country:' %></div>
+        <div class="filed"><%= f.text_field :country%></div>
+  </p>
+
+      <%= f.submit 'create' %>
+<%end%>

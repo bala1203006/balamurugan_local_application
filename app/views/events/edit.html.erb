@@ -1,0 +1,44 @@
+<%= form_for @event, url: event_path do |f| %>
+   <p>   
+   <div class="label"><%= f.label 'name:' %></div>
+      <div class="filed"><%= f.text_field :name %></div>
+   </p>
+   
+
+   <p>
+       <div class="label"><%= f.label 'category:' %></div>
+       <%categories = Event.all.collect(&:type).compact.uniq%>
+       
+        <div class="filed"><%= select_tag  :type, options_for_select(categories.collect{ |u| [u] })%></div>
+   </p>
+
+   <p>
+      <div class="label"><%= f.label 'venue:' %></div>
+      <div class="filed"><%= f.text_field :venue %></div>
+  </p>
+
+  <p>
+      <div class="label"><%= f.label 'country:' %></div>
+        <div class="filed"><%= f.text_field :country %></div>
+  </p>
+  
+  <p>
+      <div class="label"><%= f.label 'city:' %></div>
+        <div class="filed"><%= f.text_field :city %></div>
+  </p>
+
+   <p>
+      <div class="label"><%= f.label 'start_date:' %></div>
+        <div class="filed"><%= f.date_select :start_date %></div>
+
+   </p>
+   
+   <p>
+      <div class="label"><%= f.label 'end_date:' %></div>
+        <div class="filed"><%= f.date_select :end_date %></div>
+   </p>
+
+
+      <%= f.submit 'create' %>
+<%end%>
+<%= link_to 'Back', events_path %>

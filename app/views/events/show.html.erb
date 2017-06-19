@@ -1,0 +1,26 @@
+
+<h3>Event details</h3>
+<% event_users = @event.users %>
+<%= @event.name %>
+<%= @event.users.count %>
+<br>
+
+<h4>User details</h4>
+
+<% event_users.each_with_index do |user,index| %>
+	<%= user.name %>
+<% end %>
+
+<h5>sponsor details</h5>
+<% event_speaker = @event.speakers %>
+<% if !event_speaker.blank? %>
+<% event_speaker.each_with_index do |user,index| %>
+	<%= user.name %>
+<% end %>
+
+<%end%>
+
+
+<% if session[:role] == "ADMIN" %>
+  <%= link_to 'click here to manage the speaker',speakers_path %>
+<%end%>

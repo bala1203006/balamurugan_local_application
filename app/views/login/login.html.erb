@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track'=> 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track'=> 'reload' %>
+          <br><h4>LOGIN IN</h4><br>
+
+          <div class="error_msg"><%= flash[:notice] if flash[:notice] %></div>
+        </div>
+        <%= form_tag login_login_path, :method => 'post' do %>
+            <br>
+            <p>
+              <%= text_field_tag "email",nil,{:class=> 'registration', :placeholder => 'Email ID'} %>
+            </p>
+            <br>
+            <p>
+              <%= text_field_tag "password", nil,{:type=> 'password', :class => 'registration', :placeholder => 'Password'} %>
+            </p>
+
+            <p>
+              <%= submit_tag 'Login', {:class => 'registration_button'} %>
+            </p>
+        <% end %>
+        <br><hr>
+        <%= link_to 'register here',new_user_path %>
